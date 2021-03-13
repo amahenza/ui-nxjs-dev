@@ -1,7 +1,7 @@
 const Header = () => (
   <div className="Header">
     <style jsx>{`
-      background-color: transparent;
+      background-color: red;
       color: black;
       width: 100%;
       height: 50px;

@@ -4,7 +4,11 @@ import Layout from "../components/Layout";
 
 const Index = () => (
   <Layout>
-    <div></div>
+    <Link href="/home">
+      <h2>
+        Let's get to know about <a> InPoin</a>
+      </h2>
+    </Link>
   </Layout>
 );
 

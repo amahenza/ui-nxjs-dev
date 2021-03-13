@@ -1,11 +1,16 @@
 import Header from "./Header";
 import NavBar from "./NavBar";
+import VirtualTourDialog from "./VirtualTourDialog";
+
+import navButtons from "../configs/navButtons";
+import tourButton from "../configs/tourButton";
 
 const Layout = (props) => (
   <div className="Layout">
+    <VirtualTourDialog tourButton={tourButton} />
     <Header />
     <div className="Content">{props.children}</div>
-    <NavBar />
+    <NavBar navButtons={navButtons} />
     <style jsx global>{`
       * {
         box-sizing: border-box;

@@ -21,39 +21,45 @@ const useStyles = makeStyles((theme) => ({
 
 export default function VirtualTourDialog() {
   const classes = useStyles();
+
+  const [open, setOpen] = React.useState(true);
   const [fullWidth] = React.useState(true);
   const [maxWidth] = React.useState("sm");
 
   const handleSkip = () => {
+    setOpen(false);
     console.log("Look at Me Hey. Skip is triggered");
   };
 
   return (
     <React.Fragment>
-      <Dialog
-        fullWidth={fullWidth}
-        maxWidth={maxWidth}
-        open={true}
-        aria-labelledby="virtual-tour-dialog-title"
-        onEnter={console.log("Look at Me Hey. Dialog opened")}
-      >
-        <DialogTitle id="virtual-tour-dialog-title">Take Tour?</DialogTitle>
-        <DialogContent>
-          <DialogContentText>
-            -- later is display logo and mascot{" "}
-          </DialogContentText>
-        </DialogContent>
-        <DialogActions className={classes.setButtons}>
-          <Link href="/register-tour" passHref>
-            <Button variant="contained" color="secondary">
-              Yes!
+      {open && (
+        <Dialog
+          fullWidth={fullWidth}
+          maxWidth={maxWidth}
+          open={true}
+          aria-labelledby="virtual-tour-dialog-title"
+          onEnter={console.log("Look at Me Hey. Dialog opened")}
+        >
+          <DialogTitle id="virtual-tour-dialog-title">Take Tour?</DialogTitle>
+
+          <DialogContent>
+            <DialogContentText>
+              -- later is display logo and mascot{" "}
+            </DialogContentText>
+          </DialogContent>
+          <DialogActions className={classes.setButtons}>
+            <Link href="/register-tour" passHref>
+              <Button variant="contained" color="secondary">
+                Yes!
+              </Button>
+            </Link>
+            <Button onClick={() => handleSkip()} color="primary">
+              Skip
             </Button>
-          </Link>
-          <Button onClick={handleSkip} color="primary">
-            Skip
-          </Button>
-        </DialogActions>
-      </Dialog>
+          </DialogActions>
+        </Dialog>
+      )}
     </React.Fragment>
   );
 }

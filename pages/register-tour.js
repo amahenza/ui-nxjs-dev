@@ -1,11 +1,12 @@
 import React from "react";
+import Link from "next/link";
 import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
 
 import Popover from "@material-ui/core/Popover";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import TextField from "@material-ui/core/TextField";
-import Link from "@material-ui/core/Link";
+//import Link from "@material-ui/core/Link";
 import Grid from "@material-ui/core/Grid";
 import Box from "@material-ui/core/Box";
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
@@ -89,6 +90,15 @@ function Copyright() {
   );
 }
 
+function ResendOTP() {
+  return (
+    <FormHelperText>
+      Click here to
+      <Link href="#"> resend OTP</Link>
+    </FormHelperText>
+  );
+}
+
 function CustomizedInputBase() {
   const classes = useStyles();
 
@@ -164,13 +174,10 @@ export default function RegisterTour() {
                 <CustomizedInputBase />
               </Grid>
               <Grid item xs={12}>
-                <FormHelperText id="component-helper-text">
-                  Some important helper text
-                </FormHelperText>
+                <ResendOTP />
               </Grid>
             </Grid>
 
-            <SimplePopover />
             <Button
               //type="submit"
               fullWidth

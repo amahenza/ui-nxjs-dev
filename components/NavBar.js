@@ -6,7 +6,7 @@ const NavBar = (props) => (
       <NavButton key={button.path} path={button.path} label={button.label} />
     ))}
     <style jsx>{`
-      background-color: grey;
+      background-color: red;
       color: white;
       width: 100%;
       height: 90px;

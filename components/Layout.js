@@ -10,7 +10,6 @@ function Layout(props) {
   return (
     <div className="Layout">
       <VirtualTourDialog tourButton={tourButton} />
-
       <Header />
       <div className="Content">{props.children}</div>
       <NavBar navButtons={navButtons} />
